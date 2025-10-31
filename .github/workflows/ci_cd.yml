@@ -74,9 +74,9 @@ jobs:
       ### Log in to Docker Hub using secrets ###
       - name: Docker Hub Login
         env:
-          HUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
-          echo "$HUB_TOKEN" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "$DOCKERHUB_TOKEN" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       ### Push the built image to Docker Hub ###
       - name: Push Docker Image
